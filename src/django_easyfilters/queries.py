@@ -1,6 +1,6 @@
 from django import VERSION
 from django.db import models
-from django.db.backends.util import typecast_timestamp
+from django.db.backends.utils import typecast_timestamp
 from django.db.models.sql.compiler import SQLCompiler
 from django.db.models.sql.constants import MULTI
 try:
