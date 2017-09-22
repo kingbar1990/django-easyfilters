@@ -34,5 +34,10 @@ def get_model_field(model, f):
         else:
             model = rel.rel.to
             opts = model._meta
-    rel, model, direct, m2m = opts.get_field(parts[-1])
+
+    try:
+        rel, model, direct, m2m = opts.get_field(parts[-1])
+    except TypeError:
+        return opts.get_field(parts[-1])
+
     return rel, m2m
