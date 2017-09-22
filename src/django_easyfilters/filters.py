@@ -71,7 +71,7 @@ class Filter(object):
             query_param = field
         self.query_param = query_param
         self.order_by_count = order_by_count
-        self.field_obj, m2m = get_model_field(self.model, self.field)
+        self.field_obj = get_model_field(self.model, self.field)
 
         if self.field_obj.rel is not None:
             self.rel_model = self.field_obj.rel.to
